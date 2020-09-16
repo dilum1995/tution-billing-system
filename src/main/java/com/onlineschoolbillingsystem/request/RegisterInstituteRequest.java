@@ -6,14 +6,14 @@ import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.NotEmpty;
 
+/**
+ * This class is the Request Body
+ * template for requests to register a new institute.
+ */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class RegisterInstituteRequest {
-
-    /**
-     * This class is the Request Body template for requests to register a new institute.
-     */
 
     @NotEmpty(message = "Email must not be empty.")
     private String email;

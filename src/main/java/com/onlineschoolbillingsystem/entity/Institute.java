@@ -6,6 +6,9 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
+/**
+ * Entity class of institute.
+ */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -18,7 +21,7 @@ public class Institute {
      */
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // auto generated institute id.
     private long instituteId;
 
     @Column(unique = true)

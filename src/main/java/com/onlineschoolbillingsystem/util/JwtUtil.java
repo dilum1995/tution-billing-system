@@ -11,6 +11,10 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
 
+/**
+ * Class which holds the functionalities related to
+ * the token creation validation and claming.
+ */
 @Service
 public class JwtUtil {
     private final String secret = "billing_system_secret";

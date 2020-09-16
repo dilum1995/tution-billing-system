@@ -7,6 +7,10 @@ import lombok.NoArgsConstructor;
 import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 
+/**
+ * This class is the Request Body
+ * template for requests to create a class.
+ */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

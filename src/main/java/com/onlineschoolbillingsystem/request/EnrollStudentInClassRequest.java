@@ -6,6 +6,11 @@ import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.NotNull;
 
+/**
+ * This class is the Request Body
+ * template for requests to enroll a class
+ * to an institute.
+ */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

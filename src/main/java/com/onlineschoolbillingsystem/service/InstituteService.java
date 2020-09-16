@@ -19,13 +19,12 @@ import java.math.BigDecimal;
 import java.util.*;
 import java.util.stream.Collectors;
 
+/**
+ * This class handles all the functions related to an Institute.
+ */
 @Service
 @Transactional
 public class InstituteService implements UserDetailsService {
-
-    /**
-     * This class handles all the functions related to an Institute
-     */
 
     private InstituteRepository instituteRepository;
     private InstituteClassRepository instituteClassRepository;

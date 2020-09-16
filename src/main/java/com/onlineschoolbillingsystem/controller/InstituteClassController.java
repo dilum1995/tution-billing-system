@@ -10,6 +10,10 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.util.Set;
 
+/**
+ * Controller class related to classes registered
+ * to a specific institute related endpoints.
+ */
 @RestController
 @RequestMapping(path = "/classes")
 public class InstituteClassController {
@@ -32,6 +36,13 @@ public class InstituteClassController {
         return instituteClassService.getStudentsByClass(classId);
     }
 
+    /**
+     * Post endpoint to register a student to a class.
+     * @param classId
+     * @param enrollStudentInClassRequest
+     * @return - registered student data.
+     * @throws Exception
+     */
     @PostMapping(path = "/{classId}/students")
     public Set<InstituteClass> enrollStudentInClass(@PathVariable long classId, @Valid @RequestBody EnrollStudentInClassRequest enrollStudentInClassRequest) throws Exception {
         return instituteClassService.enrollStudentInClass(enrollStudentInClassRequest.getStudentId(), classId);

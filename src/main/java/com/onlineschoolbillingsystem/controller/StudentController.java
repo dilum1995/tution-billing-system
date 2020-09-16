@@ -11,6 +11,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.Valid;
 
+/**
+ * Controller class related to student.
+ */
 @RestController
 @RequestMapping("/students")
 public class StudentController {
@@ -22,6 +25,11 @@ public class StudentController {
         this.studentService = studentService;
     }
 
+    /**
+     * To register a student to the institution.
+     * @param registerStudentRequest
+     * @return registered student data.
+     */
     @PostMapping
     public Student registerStudent(@Valid @RequestBody RegisterStudentRequest registerStudentRequest) {
         return studentService.registerStudent(registerStudentRequest.getName(), registerStudentRequest.getAddress(),

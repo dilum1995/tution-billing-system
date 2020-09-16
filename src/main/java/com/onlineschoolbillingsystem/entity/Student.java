@@ -10,6 +10,11 @@ import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
+/**
+ * This class represents a Student who
+ * attends the many Class that takes
+ * place in an Institute.
+ */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -17,9 +22,6 @@ import java.util.Set;
 @Table(name = "Student")
 public class Student {
 
-    /**
-     * This class represents a Student who attends the many Class that takes place in an Institute
-     */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long studentId;

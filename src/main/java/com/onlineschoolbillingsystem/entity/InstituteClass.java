@@ -10,16 +10,16 @@ import java.math.BigDecimal;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * This class represents the Class
+ * in an Institute (e.g: Biology, Maths, Accounts, etc.)
+ */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
 @Table(name = "InstituteClass")
 public class InstituteClass {
-
-    /**
-     * This class represents the Class in an Institute (e.g: Biology, Maths, Accounts, etc.)
-     */
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

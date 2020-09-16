@@ -16,6 +16,10 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+/**
+ * application main class wchich contains the main
+ * method.
+ */
 @SpringBootApplication
 public class OnlineSchoolBillingSystem {
 

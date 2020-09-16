@@ -7,6 +7,9 @@ import lombok.NoArgsConstructor;
 import java.math.BigDecimal;
 import java.util.Map;
 
+/**
+ * Entity class of Monthly bill.
+ */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
