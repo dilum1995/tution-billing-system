@@ -1,0 +1,358 @@
+{
+	"info": {
+		"_postman_id": "88567db5-aaa6-421f-b6ff-1e8369a83b61",
+		"name": "Online School Billing System",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Authenticate",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\": \"superuser@osbs.lk\",\n\t\"password\": \"superuser@osbs123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/authenticate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"authenticate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Institutes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/institutes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"institutes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Institute By Email",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/institutes?email=admin@abcinstitute.lk",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"institutes"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "admin@abcinstitute.lk"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Students In Class",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBhYmNpbnN0aXR1dGUubGsiLCJleHAiOjE2MDAyODUwODUsImlhdCI6MTYwMDI0OTA4NX0.SIy-bIbVVbSlbw8gr6NVybDC7hKK3eBSGHaK0Z8tv54",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/classes/1/students",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"classes",
+						"1",
+						"students"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Classes In Institute",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBhYmNpbnN0aXR1dGUubGsiLCJleHAiOjE2MDAyODUwODUsImlhdCI6MTYwMDI0OTA4NX0.SIy-bIbVVbSlbw8gr6NVybDC7hKK3eBSGHaK0Z8tv54",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/institutes/1/classes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"institutes",
+						"1",
+						"classes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Monthly Bill for Student",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBhYmNpbnN0aXR1dGUubGsiLCJleHAiOjE2MDAyODMzNDEsImlhdCI6MTYwMDI0NzM0MX0.EFfZNSkIxRwpEYzr1w7NUW3G_OjV6IFUKJVEsvz94xs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/institutes/1/students/4/monthly-bill",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"institutes",
+						"1",
+						"students",
+						"4",
+						"monthly-bill"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register Institute",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"admin@sigma1.lk\",\n\t\"password\": \"admin@sigma1123\",\n\t\"address\": \"Colombo\",\n\t\"contact\": \"0771234567\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/institutes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"institutes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register Class",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBhYmNpbnN0aXR1dGUubGsiLCJleHAiOjE2MDAyODE3MDUsImlhdCI6MTYwMDI0NTcwNX0.EeOm3hvt0Qn1jSTAuoF-T4Qra_iqRlUoN_21N1XVDKo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"subject\": \"Biology\",\n\t\"day\": \"Wednesday\",\n\t\"time\": \"4.00PM - 6.00PM\",\n\t\"lectureHall\": \"B\",\n\t\"instructor\": \"Adam\",\n\t\"monthlyFee\": 1000.00\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/institutes/1/classes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"institutes",
+						"1",
+						"classes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Enroll Student in Class",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBhYmNpbnN0aXR1dGUubGsiLCJleHAiOjE2MDAyODUwODUsImlhdCI6MTYwMDI0OTA4NX0.SIy-bIbVVbSlbw8gr6NVybDC7hKK3eBSGHaK0Z8tv54",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"studentId\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/classes/1/students",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"classes",
+						"1",
+						"students"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register Student",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBzYXNpcC5sayIsImV4cCI6MTYwMDI3MzExNywiaWF0IjoxNjAwMjM3MTE3fQ.9ee7aCukUCp7vXQu4n9HOSbLw8hHUJJVFnb4GJMZZzY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Jane\",\n\t\"address\": \"Colombo\",\n\t\"contact\": \"0771234567\",\n\t\"gender\": \"f\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/students",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"students"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
